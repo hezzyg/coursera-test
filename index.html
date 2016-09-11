@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="MsgApp">
   <head>
     <meta charset="utf-8">
-    <title>Hello Coursera</title>
+    <title>Expressions and Interpolation</title>
   </head>
   <body>
-      <h1>Hello Coursera!!! :)</h1>
+      <h1>Expressions and interpolation</h1>
+      <div ng-controller="MsgController">
+        {{name}} has a message for you: <br/>
+        {{sayMessage()}}
+        <div>
+          <button ng-click="feedHezzy()">Feed Hezzy</button>
+          <br/>
+
+          <img ng-src="images/hezzy_{{stateOfBeing}}.png"/>
+        </div>
+      </div>
+
+
+      <script src="angular.min.js"></script>
+      <script src="app.js"></script>
   </body>
 </html>
