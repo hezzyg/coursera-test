@@ -4,6 +4,7 @@
 <head>
 	<title>Module 2 Solution</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
 	<h1>My Shopping List</h1>
@@ -13,7 +14,7 @@
 	<div ng-controller="ToBuyShoppingController as list1">
 		<ol>
 			<li ng-repeat="item in list1.items">Buy {{item.quantity}} {{item.name}} 
-				<button ng-click="list1.BoughtItem($index)">Bought</button></li>
+				<button ng-click="list1.BoughtItem($index)" class="btn"><i class="fa fa-check-circle" aria-hidden="true"></i> Bought</button></li>
 		</ol>
 		<div ng-if="!list1.items.length" class="message">Everything is bought!</div>
 	</div>
