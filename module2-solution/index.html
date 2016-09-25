@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html ng-app="ShoppingListCheckOff">
+<head>
+	<title>Module 2 Solution</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>My Shopping List</h1>
+
+	<!-- Shopping List -->
+	<h3>To Buy</h3>
+	<div ng-controller="ToBuyShoppingController as list1">
+		<ol>
+			<li ng-repeat="item in list1.items">Buy {{item.quantity}} {{item.name}} 
+				<button ng-click="list1.BoughtItem($index)">Bought</button></li>
+		</ol>
+		<div ng-if="!list1.items.length" class="message">Everything is bought!</div>
+	</div>
+
+	<hr/>
+	<!-- Bought List -->
+	<h3>Already Bought</h3>
+	<div ng-controller="AlreadyBoughtShoppingController as list2">
+		<ul>
+			<li ng-repeat="item in list2.items" class="checked">Bought {{item.quantity}} {{item.name}}</li>
+		</ul>
+		<div ng-if="!list2.items.length" class="message">Nothing bought yet</div>
+	</div>
+
+
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

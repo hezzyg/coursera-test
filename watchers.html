@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="MsgApp">
+  <head>
+    <meta charset="utf-8">
+    <title>NG REPEAT</title>
+  </head>
+  <body>
+      <h1>NG REPEAT</h1>
+      <div ng-controller="MsgController">      
+      	<!-- Shopping list #1 -->
+      	<h3>Shopping List:</h3>
+      	<!-- <ul>
+      		<li ng-repeat="item in ShoppingList1">{{item}}</li>
+      	</ul> -->
+
+      	<!-- Shopping List #2 -->
+      	<ul>
+      		<li ng-repeat="item in shoppingList2">Buy {{item.quantity}} of 
+      			{{item.name}}</li>
+      	</ul>
+
+      	<input type="text" name="" ng-model="newItemName" placeholder="Add new items">
+      	<input type="text" name="" ng-model="newItemQuantity" placeholder="item quantity">
+      	<button ng-click="addToList()">Add to list!</button>
+
+
+      </div>
+
+
+      <script src="angular.min.js"></script>
+      <script src="ngRepeatApp.js"></script>
+  </body>
+</html>

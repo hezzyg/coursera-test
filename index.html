@@ -5,13 +5,20 @@
     <title>Expressions and Interpolation</title>
   </head>
   <body>
-      <h1>Expressions and interpolation</h1>
+      <h1>Custom Filters</h1>
       <div ng-controller="MsgController">
         {{name}} has a message for you: <br/>
-        {{sayMessage()}}
+        {{sayMessage()}} <br>        
+        choose what to replace:
+        <input type="text" name="" ng-model="tragetString"><br>
+        what to replace with:
+        <input type="text" name="" ng-model="replaceString"><br>        
+        {{sayLovesMessage() | truth : tragetString : replaceString}} <br>
         <div>
           <button ng-click="feedHezzy()">Feed Hezzy</button>
           <br/>
+          Cost: {{coockieCost | currency : "$%$" : 3}}
+          <br/>          
 
           <img ng-src="images/hezzy_{{stateOfBeing}}.png"/>
         </div>

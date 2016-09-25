@@ -1,0 +1,13 @@
+body {
+	font-size: 1.2em;
+	font-family: sans-serif;
+	color: #303030;
+}
+.checked {
+	text-decoration: line-through;
+	color: green;
+}
+.message {
+	font-weight: bold;
+	color: #3071ff;
+}

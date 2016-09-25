@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListApp">
+<head>
+	<title>Custom Services with Factroy</title>
+</head>
+<body>
+<h1>Custom Services with Factroy</h1>
+<!-- LIST #1 - unlimited items -->
+<div ng-controller="ShoppingListController1 as list1">
+	<h3>Shopping List #1</h3>
+	<input type="text" ng-model="list1.itemName" placeholder="item name" name="">
+	<input type="text" ng-model="list1.itemQuantity" placeholder="quantity" name="">
+	<button ng-click="list1.addItem()">Add Item To Shopping List</button>
+
+	<ol>
+		<li ng-repeat="item in list1.items">{{item.quantity}} of {{item.name}} 
+			<button ng-click="list1.removeItem($index)">X</button>
+		</li>
+	</ol>
+	<div class="error">{{list1.errorMessage}}</div>
+</div>
+
+<!-- LIST #2 limited to 3 items -->
+<div ng-controller="ShoppingListController2 as list2">
+	<h3>Shopping list #2 limited to 3 items</h3>
+	<input type="text" ng-model="list2.itemName" name="" placeholder="item name">
+	<input type="text" ng-model="list2.itemQuantity" placeholder="item quantity" name="">
+	<button ng-click="list2.addItem();">Add Item!</button>
+	<ol>
+		<li ng-repeat="item in list2.items">{{item.quantity}} of {{item.name}} 
+			<button ng-click="list2.removeItem($index)">X</button>
+		</li>
+	</ol>
+	<div class="error">{{list2.errorMessage}}</div>
+</div>
+
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="customServiceWFactory.js"></script>
+</body>
+</html>

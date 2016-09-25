@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="filterApp">
+  <head>
+    <meta charset="utf-8">
+    <title>NG REPEAT</title>
+  </head>
+  <body>
+      <h1>NG REPEAT filter</h1>
+      <div ng-controller="ShoppingListController">
+        <h3>Shopping List:</h3>
+
+        <input type="text" name="" ng-model="search">
+        <br/>
+
+        <ul>
+          <li ng-repeat="item in shoppingList | filter: search">{{item}}</li>
+        </ul>
+        
+      </div>      
+
+
+      <script src="angular.min.js"></script>
+      <script src="filter.js"></script>
+  </body>
+</html>
