@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="NarrowItDownApp">
+<head>
+	<title>Module 3 Solution</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Search The Menu App</h1>	
+	
+	<div ng-controller="NarrowItDownController as ctrl">
+		<input type="text" name="" ng-model="ctrl.searchBox">
+		<button ng-click="ctrl.matchedMenuItems(ctrl.searchBox)">Narrow It Down For Me!</button>
+
+		<found-items 
+		items="ctrl.found" 
+		on-remove="ctrl.removeItem(index)">			
+		</found-items>
+
+		<div class="message" ng-if="ctrl.nothingIsFound">Nothing Found</div>
+	</div>
+
+
+
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

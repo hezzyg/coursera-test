@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListDirectiveApp">
+<head>
+	<title>Directives with Isolate Scope</title>
+</head>
+<body>
+<h1>Directives with With Their Own Controllers</h1>
+<!-- LIST #1 - unlimited items -->
+<div id="list1" ng-controller="ShoppingListController as list">
+	<!-- <h3>Shopping List #1</h3> -->
+	<input type="text" ng-model="list.itemName" placeholder="item name" name="">
+	<input type="text" ng-model="list.itemQuantity" placeholder="quantity" name="">
+	<button ng-click="list.addItem()">Add Item To Shopping List</button>
+	
+	<shopping-list items="list.items" title="{{list.title}}"></shopping-list>	
+	
+
+</div>
+
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="directivesWOwnControllers.js"></script>
+</body>
+</html>
