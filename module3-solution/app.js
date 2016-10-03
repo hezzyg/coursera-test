@@ -33,11 +33,9 @@
 		list.nothingIsFound = false;
 
 		//found = call getmatchedMenuItems
-		list.matchedMenuItems = function (searchBox) {
-			console.log("button is clicked! with searchBox is: ", searchBox);
+		list.matchedMenuItems = function (searchBox) {			
 			var promise = MenuSearchService.getMatchedMenuItems(searchBox);
-
-			console.log("promise is: ", promise);
+			
 			promise
 			.then (function(response) {
 				list.found = response;	
