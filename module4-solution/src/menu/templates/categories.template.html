@@ -1,0 +1,14 @@
+<div class="title"><a ui-sref="home"><< Home</a></div>
+<div class="categories">
+Menu Categories:
+	<ul>
+	  <li ng-repeat="category in catList.categories" ui-class-active="active">
+	    <a ui-sref="categories.category({catId: category.short_name})">{{category.name}}</a>
+	  </li>
+	</ul>
+</div>
+
+<!-- Items view -->
+<div class="items">
+	<ui-view></ui-view>
+</div>

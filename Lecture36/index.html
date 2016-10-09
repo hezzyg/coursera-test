@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="RountingApp">
+<head>
+	<title>Intro to ui-router</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<h1>Intro to ui-router</h1>
+
+	<div class="tabs">
+		<!-- <button ui-sref="tab1">TAB 1</button> 
+		<button ui-sref="tab2">TAB 2</button> -->
+		<a ui-sref="tab1" ui-sref-active="activeTab">TAB 1</a> 
+		<a ui-sref="tab2" ui-sref-active="activeTab">TAB 2</a>
+	</div>
+
+	<ui-view></ui-view>
+
+	<!-- Libraries -->
+	<script type="text/javascript" src="lib/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+
+	<!-- Modules -->
+	<script type="text/javascript" src="src/app.js"></script>
+
+</body>
+</html>
