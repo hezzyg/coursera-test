@@ -1,0 +1,55 @@
+<div class="container">
+	<h2 class="text-center">My Info</h2>
+
+	<div class="row" ng-if="!usersCtrl.signupMsg">
+		<div id="user-info" class="col-md-6">
+			<table>
+				<tr>
+					<td class="td">First name: </td>
+					<td class="td">{{usersCtrl.userInfo.fname}}</td>
+				</tr>
+				<tr>
+					<td class="td">Last name: </td>
+					<td class="td">{{usersCtrl.userInfo.lname}}</td>
+				</tr>
+				<tr>
+					<td class="td">Email: </td>
+					<td class="td">{{usersCtrl.userInfo.email}}</td>
+				</tr>
+				<tr>
+					<td class="td">Phone number: </td>
+					<td class="td">{{usersCtrl.userInfo.phone}}</td>
+				</tr>
+			</table>
+		</div>
+		<div id="user-dish" class="col-md-6">
+			<h3>Your Favorite Dish</h3>
+			<div class="menu-item-tile">
+			  <div class="row">
+			    <div class="col-sm-5">
+			      <div class="menu-item-photo">
+			        <div>{{usersCtrl.item.short_name}}</div>
+			        <img class="img-responsive" width="250" height="150" ng-src="{{usersCtrl.basePath}}/images/{{usersCtrl.item.short_name}}.jpg" alt="{{usersCtrl.item.name}}">
+			      </div>
+			      <div class="menu-item-price">{{usersCtrl.item.price_small | currency}}<span> {{usersCtrl.item.small_portion_name}}</span> {{usersCtrl.item.price_large | currency}} <span>{{usersCtrl.item.large_portion_name}}</span></div>
+			    </div>
+			    <div class="menu-item-description col-sm-7">
+			      <h3 class="menu-item-title">{{usersCtrl.item.name}}</h3>
+			      <p class="menu-item-details">{{usersCtrl.item.description}}</p>
+			    </div>
+			  </div>			 
+			</div>
+			
+			<div class="dish-error">
+				{{usersCtrl.error}}
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="row text-center" ng-if="usersCtrl.signupMsg">
+		<h2>{{usersCtrl.signupMsg}} <a ui-sref="public.newslettersignup">{{usersCtrl.signupLink}}</a></h2>
+	</div>
+
+	
+</div>

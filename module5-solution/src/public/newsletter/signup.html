@@ -1,0 +1,62 @@
+<div class="container">
+	<h2 class="text-center">Sign up to our Newsletter</h2>
+
+	<form name="signupCtrl.signupform" novalidate class="col-md-6" >
+	  <div class="form-group">
+	    <label for="fname">First Name: 
+	    <span class="glyphicon glyphicon-ok" ng-if="signupCtrl.signupform.fname.$valid"></span></label>
+	    <input type="text" class="form-control" ng-model="signupCtrl.fname" name="fname" required>	  
+	  <!-- angular validation message -->
+	  <div ng-if="signupCtrl.signupform.fname.$touched">
+	  	<span ng-show="signupCtrl.signupform.fname.$error.required" class="erroMsg">Please enter your first name</span>
+	  </div>	  
+	  <div class="form-group">
+	    <label for="lname">Last Name: 
+	    <span class="glyphicon glyphicon-ok" ng-if="signupCtrl.signupform.lname.$valid"></span></label>
+	    <input type="text" class="form-control" ng-model="signupCtrl.lname" name="lname" required>
+	  </div>
+	  <!-- angular validation message -->
+	  <div ng-if="signupCtrl.signupform.$submitted || signupCtrl.signupform.lname.$touched">
+	  	<div ng-if="signupCtrl.signupform.lname.$error.required" class="erroMsg">Please enter your last name</div>	  
+	  </div>	  
+	  <div class="form-group">
+	    <label for="email">Email address: 
+	    <span class="glyphicon glyphicon-ok" ng-if="signupCtrl.signupform.email.$valid"></span></label>
+	    <input type="email" class="form-control" ng-model="signupCtrl.email" name="email" required>
+	  </div>
+	  <!-- angular validation message -->
+	  <div ng-if="signupCtrl.signupform.$submitted || signupCtrl.signupform.email.$touched">
+	  	<div ng-if="signupCtrl.signupform.email.$error.required" class="erroMsg">Please enter your email</div>	  
+	  </div>	  
+	  <div class="form-group">
+	    <label for="phone">Phone number: 
+	    <span class="glyphicon glyphicon-ok" ng-if="signupCtrl.signupform.phone.$valid"></span></label>
+	    <input type="text" class="form-control" ng-model="signupCtrl.phone" name="phone" required>
+	  </div>
+	  <!-- angular validation message -->
+	  <div ng-if="signupCtrl.signupform.$submitted || signupCtrl.signupform.phone.$touched">
+	  	<div ng-if="signupCtrl.signupform.phone.$error.required" class="erroMsg">Please enter your phone number</div>	  
+	  </div>	  
+	  <div class="form-group">
+	    <label for="dish">Specifiy your favorite dish's menu number: 
+	    <span class="glyphicon glyphicon-ok" ng-if="signupCtrl.signupform.dish.$valid"></span>
+	    </label>
+	    <input type="text" class="form-control" ng-model="signupCtrl.dish" name="dish" ng-class="{'ng-invalid': signupCtrl.errorClass}" ng-blur="signupCtrl.checkDish(signupCtrl.dish)" required>
+	  </div>
+	  <!-- angular validation message -->
+	  <div ng-if="signupCtrl.signupform.$submitted || signupCtrl.signupform.dish.$touched">
+	  	<div ng-if="signupCtrl.signupform.dish.$error.required" class="erroMsg">Please Specifiy your favorite dish's menu number</div>	  
+	  </div>
+	  <div ng-if="signupCtrl.signupform.dish.$error.valid" class="erroMsg">No such menu number exists</div>	  
+	  </div>
+	  <div class="form-group erroMsg" ng-if="signupCtrl.errorMsg">
+	  	{{signupCtrl.errorMsg}}
+	  </div>
+	  <input type="submit" class="btn btn-default form-control" value="Submit" ng-disabled="signupCtrl.signupform.$invalid" ng-click="signupCtrl.submit(signupCtrl.dish)">
+
+	  <div class="save-alert">{{signupCtrl.storeuserInfo}}</div>
+	 </div> <!-- form gorup class -->
+	</form>
+
+
+</div>
